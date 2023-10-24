@@ -15,7 +15,7 @@ export default {
         const newTodo = ref('');
         const addTodo = () => {
             if (newTodo.value.trim() === '') return;
-            todos.value.push(newTodo.value);
+            this.$emit('add-todo', newTodo.value);
             newTodo.value = '';
         };
 
