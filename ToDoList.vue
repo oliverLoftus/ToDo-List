@@ -1,5 +1,5 @@
 <!-- src/components/ToDoList.vue -->
-<templates>
+<template>
   <div>
     <h1>ToDo list</h1>
     <ul>
@@ -15,17 +15,13 @@
 import { ref } from 'vue';
 
 export default {
-  setup() {
-    const todos = ref ([]);
-
-    const removeTodo = (index) => {
-      todos.value.splice(index, 1);
-    };
-
-    return {
-      todos,
-      removeTodo,
-    };
+  props: {
+    todos: Array, // Define a prop called "todos" as an array
+  },
+  methods: {
+    removeTodo(index) {
+        this.$emit('remove-todo', index); // Emit a custom event to remove a ToDo
+    },
   },
 };
 </script>
