@@ -9,12 +9,30 @@
 
 <script>
 import AddTodo from './components/AddToDo.vue';
-import ToDoList from '.components/ToDoList.vue';
+import ToDoList from './components/ToDoList.vue';
+import { ref } from 'vue';
 
 export default {
     components: {
         AddTodo,
         ToDoList,
+    },
+    setup() {
+        const todos = ref([]);
+
+        const addTodo = (newTodo) => {
+            todos.value.push(newTodo);
+        };
+
+        const removeTodo = (index) => {
+            todos.value.splice(index, 1);
+        };
+
+        return {
+            todos,
+            addTodo,
+            removeTodo,
+        };
     },
 };
 </script>
