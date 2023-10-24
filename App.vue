@@ -2,8 +2,8 @@
 <template>
     <div>
         <h1>Vue 3 ToDo App</h1>
-        <add-todo />
-        <to-do-list />
+        <add-todo @add-todo="addTodo" />
+        <to-do-list :todos="todos" @remove-todo="removeTodo" />
     </div>
 </template>
 
