@@ -1,11 +1,11 @@
 <!-- src/components/AddToDo.vue -->
-<templates>
+<template>
     <div>
         <h2>Add ToDo</h2>
         <input v-model="newTodo" @keyup.enter="addTodo" placeholder="Enter a new ToDo" />
         <button @click="addTodo">Add</button>
     </div>
-</templates>
+</template>
 
 <script>
 import { ref } from 'vue';
