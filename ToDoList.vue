@@ -1,5 +1,5 @@
 <!-- src/components/ToDoList.vue -->
-<templates>
+<template>
   <div>
     <h1>ToDo list</h1>
     <ul>
